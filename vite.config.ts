@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
       // This is crucial for GitHub Pages. It ensures assets are loaded relatively.
-      base: './',
+      // Updated to match your repository name 'mohrr'
+      base: '/mohrr/',
       server: {
         port: 3000,
         host: '0.0.0.0',
