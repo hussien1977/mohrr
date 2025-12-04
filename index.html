@@ -64,27 +64,26 @@
         background: #555;
       }
     </style>
-    <!-- Removed conflicting importmap. Vite handles module resolution during build. -->
     <link rel="stylesheet" href="./index.css">
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@react-oauth/google": "https://aistudiocdn.com/@react-oauth/google@^0.12.2",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
     "path": "https://aistudiocdn.com/path@^0.12.7",
     "vite": "https://aistudiocdn.com/vite@^7.2.6",
     "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/",
-    "url": "https://aistudiocdn.com/url@^0.11.4",
-    "@react-oauth/google": "https://aistudiocdn.com/@react-oauth/google@^0.12.2"
+    "url": "https://aistudiocdn.com/url@^0.11.4"
   }
 }
 </script>
 </head>
   <body class="bg-gray-100">
     <div id="root"></div>
-    <!-- Point to the correct entry file for Vite -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Point to the correct entry file for Vite using relative path -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
