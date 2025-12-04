@@ -1,10 +1,17 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'url';
+
+// Fix for __dirname in ESM modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // This is crucial for GitHub Pages. It ensures assets are loaded relatively.
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',
@@ -18,6 +25,10 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
       }
     };
 });
